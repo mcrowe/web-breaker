@@ -1,0 +1,10 @@
+= simple_form_for @service do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :host
+
+  .form-actions
+    = link_to 'Cancel', external_services_path, class: 'btn'
+    = f.button :submit, class: 'btn-primary'

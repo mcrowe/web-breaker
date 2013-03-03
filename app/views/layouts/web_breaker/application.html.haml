@@ -1,0 +1,24 @@
+!!! Strict
+%html{:lang => "en"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=IE7"}
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    %title WebBreaker
+    = csrf_meta_tags
+    /[if lt IE 9]
+      %script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+
+    = stylesheet_link_tag "web_breaker/application", :media => "all"
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to 'WebBreaker', root_path, :class => 'brand'
+
+    .container
+      = render 'messages'
+      = yield
+
+    = javascript_include_tag 'web_breaker/application'
