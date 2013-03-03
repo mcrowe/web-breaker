@@ -3,7 +3,7 @@ require_dependency "web_breaker/application_controller"
 module WebBreaker
   class ExternalServicesController < ApplicationController
 
-    before_filter :find_service, only: [:edit, :update, :destroy]
+    before_filter :find_service, only: [:edit, :update, :destroy, :toggle]
 
     def index
       @services = ExternalService.all
@@ -17,7 +17,7 @@ module WebBreaker
     end
 
     def create
-      @service = ExternalService.new(params[:external_service])
+      @service = ExternalService.new(params[:external_service].merge(enabled: true))
 
       if @service.save
         redirect_to external_services_path, notice: 'External Service was successfully created.'
@@ -32,6 +32,11 @@ module WebBreaker
       else
         render action: 'edit'
       end
+    end
+
+    def toggle
+      @service.toggle_enabled
+      head :ok
     end
 
     def destroy

@@ -1,8 +1,10 @@
 module WebBreaker
   module ApplicationHelper
 
-    def icon_tag(name)
-      content_tag :i, '', class: "icon-#{name.to_s}"
+    def icon_tag(name, options = {})
+      klass = "icon-#{name.to_s}"
+      klass << " icon-white" unless options[:black]
+      content_tag :i, '', class: klass
     end
 
     def badge_tag(content, state = nil)
