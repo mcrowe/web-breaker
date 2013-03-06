@@ -7,11 +7,11 @@ require "web_breaker/version"
 Gem::Specification.new do |s|
   s.name        = "web_breaker"
   s.version     = WebBreaker::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of WebBreaker."
-  s.description = "TODO: Description of WebBreaker."
+  s.authors     = ["Mitch Crowe"]
+  s.email       = ["example@test.com"]
+  s.homepage    = "https://github.com/mcrowe/web-breaker"
+  s.summary     = "A breaker switch for the external services of a Rails application."
+  s.description = "A breaker switch for the external services of a Rails application."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
