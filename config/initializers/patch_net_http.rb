@@ -8,7 +8,7 @@ class Net::HTTP
     host = address
     path = request.path
 
-    WebProxy.filter_request(host, path) do
+    WebBreaker::WebProxy.filter_request(host, path) do
       __request__(request, body, &block)
     end
   end
