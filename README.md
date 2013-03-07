@@ -22,6 +22,10 @@ And then run the migrations:
 
     $ rake db:migrate
 
+Add this into your primary app's `routes.rb` file:
+
+    mount WebBreaker::Engine, :at => "web_breaker"
+
 ## Usage
 
 Visit `/web_breaker`, create some services, and toggle them!
