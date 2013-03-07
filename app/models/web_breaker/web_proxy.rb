@@ -9,7 +9,7 @@ module WebBreaker
 
       service = ExternalService.find_by_host(host)
 
-      if service.enabled?
+      if !service || service.enabled?
         yield
       else
         raise ServiceDisabledError
