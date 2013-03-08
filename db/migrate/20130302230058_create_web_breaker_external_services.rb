@@ -3,7 +3,7 @@ class CreateWebBreakerExternalServices < ActiveRecord::Migration
     create_table :web_breaker_external_services do |t|
       t.string :name
       t.string :host
-      t.boolean :enabled
+      t.boolean :enabled, default: false
 
       t.timestamps
     end
