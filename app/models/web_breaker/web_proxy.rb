@@ -11,7 +11,7 @@ module WebBreaker
       if !service || service.enabled?
         yield
       else
-        raise ServiceDisabledError
+        raise WebBreaker::ServiceDisabledError
       end
     end
 
