@@ -8,32 +8,32 @@
 
 - else
 
-%table.table.table-striped
+  %table.table.table-striped
 
-  %tbody
-    %thead
-      %tr
-        %th Name
-        %th Host
-        %th
+    %tbody
+      %thead
+        %tr
+          %th Name
+          %th Host
+          %th
 
-    - @services.each do |service|
-      %tr
+      - @services.each do |service|
+        %tr
 
-        %td= service.name
+          %td= service.name
 
-        %td= service.host
+          %td= service.host
 
-        %td
+          %td
 
-          %div.pull-right.switch.switch-small.service-toggle{ style: 'margin-left: 20px;'}
-            = check_box_tag 'enabled', true, service.enabled?, data: { id: service.id }
+            %div.pull-right.switch.switch-small.service-toggle{ style: 'margin-left: 20px;'}
+              = check_box_tag 'enabled', true, service.enabled?, data: { id: service.id }
 
-          .btn-group.pull-right{style: 'margin-top: 2px;'}
-            = link_to [:edit, service], class: 'btn btn-mini' do
-              = icon_tag 'pencil', black: true
-            = link_to service, class: 'btn btn-mini btn-danger', method: :delete, data: { confirm: 'Are you sure you want to delete this external service?' } do
-              = icon_tag 'trash'
+            .btn-group.pull-right{style: 'margin-top: 2px;'}
+              = link_to [:edit, service], class: 'btn btn-mini' do
+                = icon_tag 'pencil', black: true
+              = link_to service, class: 'btn btn-mini btn-danger', method: :delete, data: { confirm: 'Are you sure you want to delete this external service?' } do
+                = icon_tag 'trash'
 
-%p
-  = link_to_with_icon 'plus', 'New External Service', new_external_service_path, class: 'btn btn-primary'
+  %p
+    = link_to_with_icon 'plus', 'New External Service', new_external_service_path, class: 'btn btn-primary'
