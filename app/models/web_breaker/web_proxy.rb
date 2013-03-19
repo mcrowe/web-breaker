@@ -1,6 +1,5 @@
 module WebBreaker
 
-  class ServiceDisabledError < StandardError; end
 
   module WebProxy
 
@@ -12,7 +11,7 @@ module WebBreaker
       if !service || service.enabled?
         yield
       else
-        raise ServiceDisabledError
+        raise WebBreaker::ServiceDisabledError
       end
     end
 

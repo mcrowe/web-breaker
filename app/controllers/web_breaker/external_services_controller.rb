@@ -17,7 +17,7 @@ module WebBreaker
     end
 
     def create
-      @service = ExternalService.new(params[:external_service].merge(enabled: true))
+      @service = ExternalService.new(params[:external_service])
 
       if @service.save
         redirect_to external_services_path, notice: 'External Service was successfully created.'

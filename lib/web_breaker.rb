@@ -5,6 +5,7 @@ require 'simple_form'
 require 'web_breaker/version'
 require 'web_breaker/engine'
 require 'web_breaker/configuration'
+require 'web_breaker/errors'
 
 module WebBreaker
 
