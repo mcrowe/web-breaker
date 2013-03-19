@@ -26,6 +26,14 @@ Add this into your primary app's `routes.rb` file:
 
     mount WebBreaker::Engine, :at => "web_breaker"
 
+If you want to configure WebBreaker, you can create a configuration initializer at `config/initializers/like so:
+
+```ruby
+WebBreaker.configure do |config|
+  config.enabled = false
+end
+```
+
 ## Usage
 
 Visit `/web_breaker`, create some services, and toggle them!
